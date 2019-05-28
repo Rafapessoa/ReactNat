@@ -1,32 +1,32 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import {
+  createStackNavigator,
+  createAppContainer,
+} from 'react-navigation';
 
-import Seasons from './components/Seasons';
+import Home from './screens/Home';
+import Season from './screens/Season';
 
-export default class App extends React.Component {
-
-  getData(season){    
-    fetch(`http://ergast.com/api/f1/${season}.json`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    });
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Seasons handleClick= { this.getData}/>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const AppNavigator = createStackNavigator(
+  {
+    Home: {
+      screen: Home,
+    },
+    Season: {
+      screen: Season,
+    }
   },
-});
+  {
+    initialRouteName: 'Home',
+    defaultNavigationOptions:{
+      headerStyle: {
+        backgroundColor: '#333',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+  }
+);
+export default createAppContainer(AppNavigator);
