@@ -3,6 +3,9 @@ import { StyleSheet} from 'react-native';
 import { SafeAreaView } from 'react-navigation'
 import Seasons from '../../components/Seasons';
 
+//components
+//https://docs.nativebase.io/Components.html 
+
 export default class Home extends React.Component {
 
 constructor(props){
@@ -17,10 +20,7 @@ constructor(props){
   }
 
   getData(season){    
-      this.props.navigation.navigate('Season',{
-        season: season,
-        name: 'rafael',
-      }); 
+      this.props.navigation.navigate('Menu',{season}); 
   }
 
   render() {

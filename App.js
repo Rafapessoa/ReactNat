@@ -6,11 +6,15 @@ import {
 
 import Home from './screens/Home';
 import Season from './screens/Season';
+import Menu from './screens/Menu';
 
 const AppNavigator = createStackNavigator(
   {
     Home: {
       screen: Home,
+    },
+    Menu: {
+      screen: Menu,
     },
     Season: {
       screen: Season,

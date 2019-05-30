@@ -10,13 +10,13 @@ export default class Season extends React.Component {
     };
 
     componentDidMount() {
-        const season = this.props.navigation.getParam('season');
-        const name = this.props.navigation.getParam('name');
+        const season = this.props.navigation.getParam('season');        
         this.getData(season)
-        console.log(season, name);
+      
     }
 
     getData(season) {
+        console.log('sesion >>>>>>'+ season);
         fetch(`http://ergast.com/api/f1/${season}.json`)
             .then((response) => response.json())
             .then((data) => {
