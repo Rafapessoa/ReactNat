@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-navigation'
 import Seasons from '../../components/Seasons';
 
@@ -8,10 +8,10 @@ import Seasons from '../../components/Seasons';
 
 export default class Home extends React.Component {
 
-constructor(props){
-  super(props);
-  this.getData = this.getData.bind(this);
-}
+  constructor(props) {
+    super(props);
+    this.getData = this.getData.bind(this);
+  }
 
   static navigationOptions = () => {
     return {
@@ -19,15 +19,15 @@ constructor(props){
     };
   }
 
-  getData(season){    
-      this.props.navigation.navigate('Menu',{season}); 
+  getData(season) {
+    this.props.navigation.navigate('Menu', { season });
   }
 
   render() {
-      return (
-        <SafeAreaView style={styles.container}>
-          <Seasons handleClick={ this.getData } />
-        </SafeAreaView>
+    return (
+      <SafeAreaView style={styles.container}>
+        <Seasons handleClick={this.getData} />
+      </SafeAreaView>
     );
   }
 }

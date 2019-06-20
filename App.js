@@ -7,6 +7,7 @@ import {
 import Home from './screens/Home';
 import Season from './screens/Season';
 import Menu from './screens/Menu';
+import Piloto from './screens/Piloto';
 
 const AppNavigator = createStackNavigator(
   {
@@ -18,11 +19,14 @@ const AppNavigator = createStackNavigator(
     },
     Season: {
       screen: Season,
+    },    
+    Piloto: {
+      screen: Piloto,
     }
   },
   {
     initialRouteName: 'Home',
-    defaultNavigationOptions:{
+    defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#333',
       },

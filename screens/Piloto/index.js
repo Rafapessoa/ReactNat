@@ -3,7 +3,7 @@ import { Container, Header, Content, List, ListItem, Text, Card, CardItem } from
 import { SafeAreaView } from 'react-navigation';
 import { ScrollView } from 'react-native-gesture-handler';
 
-export default class Season extends React.Component {
+export default class Piloto extends React.Component {
 
     state = {
         season: []
@@ -17,11 +17,11 @@ export default class Season extends React.Component {
 
     getData(season) {
         console.log('sesion >>>>>>' + season);
-        fetch(`http://ergast.com/api/f1/${season}.json`)
+        fetch(`http://ergast.com/api/f1/${season}/drivers.json`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({
-                    season: data['MRData']['RaceTable']['Races']
+                    season: data['MRData']['DriverTable']['Drivers']
                 })
                 console.log(this.props.navigation);
             });
@@ -29,7 +29,7 @@ export default class Season extends React.Component {
 
     static navigationOptions = () => {
         return {
-            title: 'Season',
+            title: 'Piloto',
         };
     }
 
@@ -56,7 +56,7 @@ export default class Season extends React.Component {
             <Card key={`race-${i}`}>
                 <CardItem>
                     <ListItem>
-                        <Text>{item.raceName}</Text>
+                        <Text>{item.givenName} {item.familyName} </Text>
                     </ListItem>
                 </CardItem>
             </Card>

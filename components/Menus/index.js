@@ -10,8 +10,8 @@ class Seasons extends PureComponent {
         for (let i = 0; i < 20; i++) {
             const year = '20' + (i > 9 ? i : `0${i}`);
             items.push(
-                <Button style={style.Button} key={`btn-${i}`}                    
-                    onPress={ () => this.props.handleClick(year) } 
+                <Button style={style.Button} key={`btn-${i}`}
+                    onPress={() => this.props.handleClick(year)}
                     key={`season-${i}`} >
 
                     <Text  >

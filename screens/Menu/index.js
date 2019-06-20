@@ -13,7 +13,7 @@ export default class Menu extends React.Component {
   componentDidMount() {
     const season = this.props.navigation.getParam('season');
     console.log('>>>>>>.' + season)
-    this.setState({season})  
+    this.setState({ season })
   }
 
   static navigationOptions = () => {
@@ -22,17 +22,21 @@ export default class Menu extends React.Component {
     };
   }
 
-  getData(season) {
-    this.props.navigation.navigate('Season',{season});
+  getDataRaces(season) { 
+    this.props.navigation.navigate('Season', { season });
+  }
+
+  getDataPiloto(season) { 
+    this.props.navigation.navigate('Piloto', { season });
   }
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <Button onPress={() => this.getData(this.state.season)} >
+       <SafeAreaView style={styles.container}>
+        <Button onPress={() => this.getDataRaces(this.state.season)} >
           <Text> Temporadas </Text>
         </Button>
-        <Button onPress={() => this.getData(this.state.season)}>
+        <Button onPress={() => this.getDataPiloto(this.state.season)}>
           <Text> Pilotos </Text>
         </Button>
       </SafeAreaView>
