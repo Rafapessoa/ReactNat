@@ -2,7 +2,7 @@ Projeto FIAP 2019 com ReactNat
 
 Fórmula 1 com api http://ergast.com
 
-## Pode rodar o projeto excute os comandos no npm
+## Para rodar o projeto excute os comandos no npm
 
 ### `npm i`
 ### `npm -g install expo-cli --global`
@@ -11,8 +11,8 @@ Fórmula 1 com api http://ergast.com
 
 ### `Testando o Aplicativo`
 
-Para rodar voê pode rodar diretamente no seu SmartPhone para instalatr o App Expo na Loja do seu aparelho;
-Voce pode rodar tambem a partir do emulador Android ou IOS a partir da tela do Browser que será aberta automaticamente.
+Você pode rodar diretamente no seu SmartPhone basta instalar o App Expo na Loja do seu aparelho e scanear o QRCode do browser;
+Voce também pode rodar a partir do emulador Android ou IOS no botão da tela do Browser que será aberta automaticamente.
 
 No App:
 
