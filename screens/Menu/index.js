@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Container, Title, Content, Button, Text } from 'native-base';
 import { SafeAreaView } from 'react-navigation'
-import { Button } from 'native-base';
 
 export default class Menu extends React.Component {
 
@@ -12,7 +12,6 @@ export default class Menu extends React.Component {
 
   componentDidMount() {
     const season = this.props.navigation.getParam('season');
-    console.log('>>>>>>.' + season)
     this.setState({ season })
   }
 
@@ -22,26 +21,28 @@ export default class Menu extends React.Component {
     };
   }
 
-  getDataRaces(season) { 
-    this.props.navigation.navigate('Season', { season });
-  }
-
-  getDataPiloto(season) { 
-    this.props.navigation.navigate('Piloto', { season });
+  goNext(option,season) { 
+    this.props.navigation.navigate(option, { season });
   }
 
   render() {
     return (
        <SafeAreaView style={styles.container}>
-        <Button onPress={() => this.getDataRaces(this.state.season)} >
-          <Text> Temporadas </Text>
-        </Button>
-        <Button onPress={() => this.getDataPiloto(this.state.season)}>
-          <Text> Pilotos </Text>
-        </Button>
+        <Container>
+            <Content>
+              <Title>F1 - Selecione uma categoria</Title>
+              <Button large block success onPress={() => this.goNext('Races',this.state.season)}>
+                <Text>Corridas</Text>
+              </Button>
+              <Button large block info onPress={() => this.goNext('Pilot',this.state.season)}>
+                <Text>Pilotos</Text>
+              </Button>            
+            </Content>
+        </Container>
       </SafeAreaView>
     );
   }
+  
 }
 
 const styles = StyleSheet.create({

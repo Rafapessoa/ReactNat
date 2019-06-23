@@ -5,9 +5,9 @@ import {
 } from 'react-navigation';
 
 import Home from './screens/Home';
-import Season from './screens/Season';
+import Races from './screens/Races';
 import Menu from './screens/Menu';
-import Piloto from './screens/Piloto';
+import Pilot from './screens/Pilot';
 
 const AppNavigator = createStackNavigator(
   {
@@ -17,11 +17,11 @@ const AppNavigator = createStackNavigator(
     Menu: {
       screen: Menu,
     },
-    Season: {
-      screen: Season,
+    Races: {
+      screen: Races,
     },    
-    Piloto: {
-      screen: Piloto,
+    Pilot: {
+      screen: Pilot,
     }
   },
   {
